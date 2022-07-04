@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring boot tutorial</title>
+</head>
+<body>
+
+<h2>The start of spring boot</h2>
+
+<form th:action="@{/insert}" method="post" th:object="${users}">
+
+    <input type="text" placeholder="username" required th:field="*{username}" ><br><br>
+    <input type="email" placeholder="email" required th:field="*{email}" ><br><br>
+    <input type="password" placeholder="password" required th:field="*{password}" ><br><br>
+    <input type="submit" required><br><br>
+
+</form>
+
+  <a th:href="@{/users}">Users</a>
+
+</body>
+</html>

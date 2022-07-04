@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring boot tutorial</title>
+</head>
+<body>
+
+<h2>All users from db</h2>
+
+    <table>
+        <tr>
+          <th>Id</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tr th:each="user : ${allusers}">
+            <td th:text="${user.id}">id</td>
+            <td th:text="${user.username}">username</td>
+            <td th:text="${user.email}">email</td>
+            <td th:text="${user.password}">password</td>
+            <td><a th:href="@{'/edit/' + ${user.id}}">Edit</a></td>
+            <td> <a th:href="@{'/delete/' +  ${user.id}}">Delete</a></td>
+        </tr>
+    </table>
+
+
+
+</body>
+</html>
